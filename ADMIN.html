@@ -1,0 +1,146 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Admin</title>
+
+    <style>
+        :root {
+            --primary-color: #A80101;
+            --primary-hover: #800000;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --radius: 10px;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); padding-bottom: 40px; }
+
+        .brand-banner {
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+
+        .brand-banner img{
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-banner h1 { font-size: 1.8rem; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; }
+
+        .card {
+            background: var(--card-bg);
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            padding: 25px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: #555; }
+
+        input[type="text"], input[type="search"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .button-group { grid-column: 1 / -1; display: flex; justify-content: flex-end; margin-top: 10px; }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover { background-color: var(--primary-hover); }
+        .btn-action { padding: 6px 14px; font-size: 0.85rem; margin-right: 5px; }
+
+        .output-area label { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: 15px; }
+        .output-area table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .output-area th, .output-area td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        .output-area th { background-color: #f8f9fa; color: #333; font-weight: 600; }
+        
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .status-available { background-color: #e8f5e9; color: #2e7d32; }
+        .status-borrowed { background-color: #ffebee; color: #c62828; }
+    </style>
+</head>
+<body>
+
+    <div class="brand-banner">
+        <img src="PCC.png">
+        <h1>LIBRARY MANAGEMENT SYSTEM</h1>
+    </div>
+
+    <div class="card">
+        <h2>Add Book</h2>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Name of Book</label>
+                <input type="text" id="bookName" placeholder="Name of book">
+            </div>
+            <div class="form-group">
+                <label>Author Name</label>
+                <input type="text" id="authorName" placeholder="Author name">
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" id="category" placeholder="Category">
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="addBook()">Add Book</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <input type="search" id="searchFilter" placeholder="Search by title, author, category">
+    </div>
+
+    <div class="card">
+        <div class="output-area">
+            <label>Book List (Admin View)</label>
+            <div id="bookListContainer"></div>
+        </div>
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
